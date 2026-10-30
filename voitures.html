@@ -9,8 +9,8 @@
     />
     <title>Gestion du parc · AutoPark</title>
     <link rel="icon" href="data:," />
-    <link rel="stylesheet" href="css/style.css" />
-    <script type="module" src="js/voitures.js"></script>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script type="module" src="/auto-park-starter/js/voitures.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -26,7 +26,8 @@
         </a>
         <nav aria-label="Navigation principale">
           <!-- index.html est le dashboard à créer par l'apprenant. -->
-          <a href="index.html">Dashboard</a>
+
+            <a href="index.html">Dashboard</a>
           <a href="voitures.html" aria-current="page">Gestion du parc</a>
         </nav>
         <span class="agency-label">Agence de location</span>
@@ -217,7 +218,7 @@
           <div class="field">
             <label for="tri-prix">Trier par</label>
             <select id="tri-prix">
-              <option value="">Ordre initial</option>
+              <option value="default">Ordre initial</option>
               <option value="croissant">Prix croissant</option>
               <option value="decroissant">Prix décroissant</option>
             </select>
@@ -441,6 +442,8 @@
                     </button>
                   </div>
                 </td>
+              </tr>
+              <tr>
               </tr>
             </tbody>
           </table>
