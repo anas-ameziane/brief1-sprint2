@@ -1,0 +1,25 @@
+{
+  "name": "auto-park-starter",
+  "version": "1.0.0",
+  "description": "Projet individuel · 5 jours · HTML / CSS / JavaScript Vanilla ES6+",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anas-ameziane/brief1-sprint2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/anas-ameziane/brief1-sprint2/issues"
+  },
+  "homepage": "https://github.com/anas-ameziane/brief1-sprint2#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}

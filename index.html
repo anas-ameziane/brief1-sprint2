@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script type="module" src="js/dashboard.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script type="module" src="./js%20-%20Copy/dash.js"></script>
 
 </head>
 
@@ -43,7 +44,6 @@
     <!-- dashboard -->
     <section class=" mx-16 my-7 grid grid-cols-1 gap-4  md:grid-cols-2 xl:grid-cols-4">
         <div class="rounded-2xl bg-blue-300 p-7 hover:bg-blue-400 hover:w-[104%] hover:h-[104%] transition-all duration-300">
-            <img class=" p-1 bg-blue-100  rounded-md" src="assets/icons/icons8-car-48.png" alt="Total">
             <div>
                 <h2 class="font-bold text-2xl ">Total</h2>
                 <h3 id="Total" class="font-bold text-4xl">0</h3>
@@ -52,8 +52,6 @@
             </div>
         </div>
         <div class="rounded-2xl bg-green-300 p-7 hover:bg-green-400 hover:w-[104%] hover:h-[104%] transition-all duration-300">
-            <img class=" p-1 bg-green-100  rounded-md" src="assets/icons/icons8-checked-checkbox-48.png"
-                alt="disponibles">
             <div>
                 <h2 class="font-bold text-2xl ">disponibles</h2>
                 <h3 id="disponibles" class="font-bold text-4xl">0</h3>
@@ -61,7 +59,6 @@
             </div>
         </div>
         <div class=" rounded-2xl p-7  bg-yellow-100 hover:bg-amber-300 hover:w-[104%] hover:h-[104%] transition-all duration-300">
-            <img class=" p-1 bg-yellow-100  rounded-md" src="assets/icons/icons8-key-64.png" alt="louees">
             <div>
                 <h2 class="font-bold text-2xl ">louees</h2>
                 <h3 id="louees" class="font-bold text-4xl">0</h3>
@@ -69,7 +66,7 @@
             </div>
         </div>
         <div class=" rounded-2xl p-7  bg-orange-200 hover:bg-orange-400 hover:w-[104%] hover:h-[104%] transition-all duration-300 ">
-            <img class=" p-1 bg-orange-100  rounded-md" src="assets/icons/icons8-tool-48.png" alt="en maintenance">
+            
             <div>
                 <h2 class="font-bold text-2xl ">en maintenance</h2>
                 <h3 id="en_maintenance" class="font-bold text-4xl">0</h3>
@@ -78,8 +75,8 @@
         </div>
     </section>
     <!-- status -->
-    <section class="w-[46%]  mx-16 my-7 rounded-lg p-7 bg-white ">
-        <h2 class="font-bold text-2xl mb-2 ">repartition</h2>
+    <section class="w-full mx-16 my-7 rounded-lg p-7 flex bg-white">
+        <div class="w-[50%]"><h2 class="font-bold text-2xl mb-2 ">repartition</h2>
         <p class="font-normal text-l ">disponibles</p>
         <div class="bg-gray-300 h-2 w-full rounded-sm mb-3">
             <div id="disponibles-percentage" class="bg-red-300 h-2 rounded-sm"></div>
@@ -91,10 +88,12 @@
         <p>maintenance</p>
         <div class="bg-gray-300 h-2 w-full rounded-sm mb-3">
             <div id="maintenance-percentage" class="bg-red-300 h-2 rounded-sm"></div>
-        </div>
+        </div></div>
+        <div class=" W-[50%]mx-16 my-7 rounded-lg p-7 bg-white">
+        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+    </div>
+    
     </section>
-
-
 </body>
 
 </html>
