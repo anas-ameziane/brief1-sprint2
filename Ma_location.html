@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma location - AutoPark</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script type="module" src="/js - Copy/Ma_location.js"></script>
+</head>
+
+<body class="bg-gray-200">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container header-content">
+
+            <a class="brand" href="voitures.html">
+                <span class="brand-mark">A<span>.</span></span>
+                <span>AutoPark<small>ATLAS AUTO</small></span>
+            </a>
+
+            <nav aria-label="Navigation principale">
+                <a href="index.html">Dashboard</a>
+                <a href="voitures.html">Gestion du parc</a>
+                <a href="Ma_location.html" aria-current="page">Ma location</a>
+            </nav>
+
+            <span class="agency-label">Agence de location</span>
+
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main id="contenu" class="container main-content">
+
+        <!-- INTRO -->
+        <section class="page-intro">
+            <p class="eyebrow">VOTRE ESPACE DE GESTION</p>
+            <h1>Composez votre location</h1>
+            <p>Votre voiture, vos dates, vos options. À vous de choisir.</p>
+        </section>
+
+        <!-- PROGRESSION -->
+        <section class="mt-8 mb-8">
+
+            <div class="rounded-2xl flex flex-wrap justify-between gap-5 bg-white border-[#D8E1EF] border-2 p-7">
+
+                <div class="flex flex-col items-center gap-2">
+                    <p class="flex text-white bg-blue-600 rounded-full w-10 h-10 justify-center items-center">1</p>
+                    <p class="text-blue-600">Véhicule</p>
+                </div>
+
+                <div class="flex flex-col items-center gap-2">
+                    <p class="flex text-white bg-blue-600 rounded-full w-10 h-10 justify-center items-center">2</p>
+                    <p>Récupération</p>
+                </div>
+
+                <div class="flex flex-col items-center gap-2">
+                    <p class="flex text-white bg-blue-600 rounded-full w-10 h-10 justify-center items-center">3</p>
+                    <p>Options</p>
+                </div>
+
+                <div class="flex flex-col items-center gap-2">
+                    <p class="flex text-white bg-blue-600 rounded-full w-10 h-10 justify-center items-center">4</p>
+                    <p>Récapitulatif</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- VEHICLES -->
+        <section class="rounded-2xl bg-white border-[#D8E1EF] border-2 p-7">
+
+            <div class="mb-7">
+                <p class="text-sm font-bold text-blue-600 mb-2">01 / VÉHICULE</p>
+
+                <h2 class="text-2xl font-bold">
+                    Choisissez votre véhicule
+                </h2>
+
+                <p class="text-gray-500 mt-2">
+                    Sélectionnez une voiture disponible.
+                </p>
+            </div>
+
+            <!-- DYNAMIC CARDS -->
+          <div class="flex items-center gap-3">
+
+    <button type="button" id="car_prev" aria-label="Précédent"
+        class="shrink-0 text-blue-500 hover:text-blue-700 text-5xl leading-none select-none">‹</button>
+
+    <form id="Liste_cartes"
+        class="flex flex-1 gap-5 overflow-x-auto snap-x snap-mandatory scroll-smooth p-1 bg-white font-['Montserrat']
+               [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+    </form>
+
+    <button type="button" id="car_next" aria-label="Suivant"
+        class="shrink-0 text-blue-500 hover:text-blue-700 text-5xl leading-none select-none">›</button>
+
+</div>
+
+            <!-- RENTAL PERIOD -->
+            <div class="border-t border-gray-200 mt-8 pt-6">
+
+                <h3 class="text-lg font-bold mb-5">
+                    Votre période de location
+                </h3>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+
+                    <div>
+                        <label for="date_depart" class="block text-sm font-semibold mb-2">
+                            Date de début *
+                        </label>
+
+                        <input type="date" id="date_depart"
+                            class="w-full p-3 border border-gray-300 rounded-lg">
+                    </div>
+
+                    <div>
+                        <label for="date_fin" class="block text-sm font-semibold mb-2">
+                            Date de fin *
+                        </label>
+
+                        <input type="date" id="date_fin"
+                            class="w-full p-3 border border-gray-300 rounded-lg">
+                    </div>
+
+                </div>
+            </div>
+           <div class="flex justify-between">
+    <button
+        id="recommandation"
+        class="bg-white !border-2 !border-gray-200 mt-3.5 py-2 px-5 rounded-md hover:bg-gray-100">
+        Recommandation
+    </button>
+
+    <button
+        id="next"
+        class="bg-blue-500 text-white mt-3.5 py-2 px-8 rounded-md hover:bg-blue-600">
+        Next
+    </button>
+</div>
+        </section>
+<!-- RENTAL SUMMARY -->
+<section id="votre_location"
+    class="rounded-2xl bg-white border-[#D8E1EF] border-2 p-7 mt-8">
+
+    <p class="text-xs font-bold tracking-widest text-blue-600 mb-3">VOTRE LOCATION</p>
+
+    <h2 class="nom_voitur text-2xl font-bold text-slate-800">Aucune voiture sélectionnée</h2>
+    <p id="loc_infos" class="text-sm text-gray-500 mt-3"></p>
+
+    <hr class="border-gray-200 my-5">
+
+    <p id="loc_dates" class="font-bold text-slate-800">—</p>
+    <p id="loc_jours" class="text-xs text-gray-500 mt-2"></p>
+
+    <div class="flex justify-between text-sm text-gray-500 mt-4">
+        <span id="loc_vehicule_label">Véhicule</span>
+        <span id="loc_vehicule_montant" class="font-bold text-slate-800"></span>
+    </div>
+
+    <div class="flex justify-between text-sm text-gray-500 mt-3">
+        <span>Récupération</span>
+        <span id="loc_recup" class="font-bold text-slate-800">Gratuite</span>
+    </div>
+
+    <hr class="border-gray-200 my-5">
+
+    <div class="flex justify-between items-center">
+        <span class="text-sm font-bold text-slate-800">Total estimé</span>
+        <span id="loc_total" class="text-3xl font-bold text-[#3b4fd8]">0 MAD</span>
+    </div>
+
+    <p class="text-xs text-gray-500 mt-4">Frais de récupération facturés une seule fois.</p>
+
+    <p class="text-xs text-gray-500 bg-gray-100 rounded-lg px-4 py-3 mt-4">
+        Une demande, sans paiement en ligne.
+    </p>
+</section>
+    </main>
+
+</body>
+</html>
